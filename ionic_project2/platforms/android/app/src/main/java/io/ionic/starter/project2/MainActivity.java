@@ -35,7 +35,10 @@ public class MainActivity extends CordovaActivity
             moveTaskToBack(true);
         }
 
-        // Set by <content src="index.html" /> in config.xml
+        String project2Url = "http://localhost/project2/index.html";
+        launchUrl = project2Url;
+        preferences.set("content", project2Url);
+
         loadUrl(launchUrl);
     }
 }

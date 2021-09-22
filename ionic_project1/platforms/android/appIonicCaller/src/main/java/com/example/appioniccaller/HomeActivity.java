@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import io.ionic.starter.MainActivity;
-
 public class HomeActivity extends Activity {
 
   @Override
@@ -16,10 +14,10 @@ public class HomeActivity extends Activity {
   }
 
   public void openProject1(View view) {
-    startActivity(new Intent(this, MainActivity.class));
+    startActivity(new Intent(this, io.ionic.starter.MainActivity.class));
   }
 
   public void openProject2(View view) {
-
+    startActivity(new Intent(this, io.ionic.starter.project2.MainActivity.class));
   }
 }

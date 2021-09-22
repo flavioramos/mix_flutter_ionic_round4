@@ -10,7 +10,7 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.Android">
     <activity
-      android:name="io.ionic.HomeActivity"
+      android:name=".HomeActivity"
       android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
       android:launchMode="singleTop"
       android:theme="@android:style/Theme.DeviceDefault.NoActionBar"

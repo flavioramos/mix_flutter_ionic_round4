@@ -30,5 +30,6 @@ android {
 
 dependencies {
   implementation project(path: ':appIonicProject1')
+  implementation project(path: ':appIonicProject2')
 }
 

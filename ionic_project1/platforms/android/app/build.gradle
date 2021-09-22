@@ -226,11 +226,6 @@ task cdvPrintProps {
 }
 
 android {
-    signingConfigs {
-      release {
-        signingConfig signingConfigs.debug
-      }
-    }
   defaultConfig {
         versionCode cdvVersionCode ?: new BigInteger("" + privateHelpers.extractIntFromManifest("versionCode"))
         applicationId privateHelpers.extractStringFromManifest("package")

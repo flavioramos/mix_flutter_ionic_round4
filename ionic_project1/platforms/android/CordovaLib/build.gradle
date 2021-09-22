@@ -54,10 +54,6 @@ group = 'org.apache.cordova'
 version = '9.1.0'
 
 android {
-    signingConfigs {
-      release {
-      }
-    }
     compileSdkVersion cdvCompileSdkVersion
     buildToolsVersion cdvBuildToolsVersion
 

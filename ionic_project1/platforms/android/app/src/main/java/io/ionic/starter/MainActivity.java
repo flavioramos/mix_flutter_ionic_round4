@@ -34,6 +34,9 @@ public class MainActivity extends CordovaActivity
         if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
             moveTaskToBack(true);
         }
+        String project1Url = "http://localhost/project1/index.html";
+        launchUrl = project1Url;
+        preferences.set("content", project1Url);
 
         loadUrl(launchUrl);
     }

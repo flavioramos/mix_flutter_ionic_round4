@@ -26,7 +26,6 @@ npm-debug.log*
 **/coverage
 **/dist
 **/node_modules
-**/platforms
 **/plugins
 **/www
 # Miscellaneous
@@ -61,6 +60,9 @@ npm-debug.log*
 **/.pub-cache/
 **/.pub/
 **/build/
+**/.project
+**/.project/
+**/.settings/
 
 # Web related
 **/lib/generated_plugin_registrant.dart

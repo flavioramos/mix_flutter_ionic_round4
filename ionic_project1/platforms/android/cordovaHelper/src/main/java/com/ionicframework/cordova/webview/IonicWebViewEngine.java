@@ -1,21 +1,23 @@
 package com.ionicframework.cordova.webview;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
-import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
-import androidx.annotation.RequiresApi;
 import android.util.Log;
-import android.webkit.ServiceWorkerController;
 import android.webkit.ServiceWorkerClient;
+import android.webkit.ServiceWorkerController;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+
+import androidx.annotation.RequiresApi;
+
 import org.apache.cordova.ConfigXmlParser;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPreferences;
@@ -24,9 +26,9 @@ import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CordovaWebViewEngine;
 import org.apache.cordova.NativeToJsMessageQueue;
 import org.apache.cordova.PluginManager;
+import org.apache.cordova.engine.SystemWebView;
 import org.apache.cordova.engine.SystemWebViewClient;
 import org.apache.cordova.engine.SystemWebViewEngine;
-import org.apache.cordova.engine.SystemWebView;
 
 public class IonicWebViewEngine extends SystemWebViewEngine {
   public static final String TAG = "IonicWebViewEngine";
@@ -72,7 +74,7 @@ public class IonicWebViewEngine extends SystemWebViewEngine {
     webView.setWebViewClient(new ServerClient(this, parser));
 
     super.init(parentWebView, cordova, client, resourceApi, pluginManager, nativeToJsMessageQueue);
-    if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
       final WebSettings settings = webView.getSettings();
       int mode = preferences.getInteger("MixedContentMode", 0);
       settings.setMixedContentMode(mode);
@@ -86,7 +88,7 @@ public class IonicWebViewEngine extends SystemWebViewEngine {
     boolean setAsServiceWorkerClient = preferences.getBoolean("ResolveServiceWorkerRequests", false);
     ServiceWorkerController controller = null;
 
-    if (setAsServiceWorkerClient && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+    if (setAsServiceWorkerClient && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
         controller = ServiceWorkerController.getInstance();
         controller.setServiceWorkerClient(new ServiceWorkerClient(){
             @Override

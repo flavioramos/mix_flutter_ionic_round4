@@ -32,7 +32,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * Helper class meant to be used with the android.webkit.WebView class to enable hosting assets,
@@ -43,7 +42,7 @@ import java.util.UUID;
  * This class is intended to be used from within the
  * {@link android.webkit.WebViewClient#shouldInterceptRequest(android.webkit.WebView, String)} and
  * {@link android.webkit.WebViewClient#shouldInterceptRequest(android.webkit.WebView,
- * android.webkit.WebResourceRequest)}
+ * WebResourceRequest)}
  * methods.
  */
 public class WebViewLocalServer {
@@ -188,9 +187,9 @@ public class WebViewLocalServer {
     }
     return uri;
   }
-  
+
   private static WebResourceResponse createWebResourceResponse(String mimeType, String encoding, int statusCode, String reasonPhrase, Map<String, String> responseHeaders, InputStream data) {
-    if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
       int finalStatusCode = statusCode;
       try {
         if (data.available() == 0) {
@@ -209,7 +208,7 @@ public class WebViewLocalServer {
    * Attempt to retrieve the WebResourceResponse associated with the given <code>request</code>.
    * This method should be invoked from within
    * {@link android.webkit.WebViewClient#shouldInterceptRequest(android.webkit.WebView,
-   * android.webkit.WebResourceRequest)}.
+   * WebResourceRequest)}.
    *
    * @param uri the request Uri to process.
    * @return a response if the request URL had a matching handler, null if no handler was found.

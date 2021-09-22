@@ -18,17 +18,17 @@
 */
 package org.apache.cordova.device;
 
-import java.util.TimeZone;
+import android.provider.Settings;
 
-import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.provider.Settings;
+import java.util.TimeZone;
 
 public class Device extends CordovaPlugin {
     public static final String TAG = "Device";
@@ -109,7 +109,7 @@ public class Device extends CordovaPlugin {
      * @return
      */
     public String getUuid() {
-        String uuid = Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+        String uuid = Settings.Secure.getString(this.cordova.getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
         return uuid;
     }
 

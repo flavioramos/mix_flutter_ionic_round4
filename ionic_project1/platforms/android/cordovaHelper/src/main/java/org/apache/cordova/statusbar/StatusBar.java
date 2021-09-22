@@ -34,6 +34,7 @@ import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.LOG;
 import org.apache.cordova.PluginResult;
 import org.json.JSONException;
+
 import java.util.Arrays;
 
 public class StatusBar extends CordovaPlugin {

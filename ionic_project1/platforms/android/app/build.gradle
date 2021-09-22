@@ -347,7 +347,8 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     implementation 'androidx.annotation:annotation:1.0.0'
-    // SUB-PROJECT DEPENDENCIES END
+  implementation project(path: ':cordovaHelper')
+  // SUB-PROJECT DEPENDENCIES END
 }
 
 def promptForReleaseKeyPassword() {

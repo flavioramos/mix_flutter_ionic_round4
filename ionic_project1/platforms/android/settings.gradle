@@ -1,4 +1,5 @@
+include ':appIonicCaller'
 include ':cordovaHelper'// GENERATED FILE - DO NOT EDIT
 include ":"
 include ":CordovaLib"
-include ":app"
+include ':appIonicProject1'

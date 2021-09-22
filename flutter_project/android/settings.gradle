@@ -1,4 +1,8 @@
 include ':app'
+include ':appIonicProject1'
+include ':appIonicProject2'
+include ':cordovaHelper'
+include ':CordovaLib'
 
 def localPropertiesFile = new File(rootProject.projectDir, "local.properties")
 def properties = new Properties()
